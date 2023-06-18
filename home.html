@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Reservation System</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<header class="bg-gradient-to-r from-yellow-500 via-pink-500 to-blue-500 shadow h-20 fixed top-0 left-0 w-full">
+  <div class="m-auto p-2 flex justify-center">
+    <div class="flex md:flex-row flex-col items-center p-4">
+      <div class="logo">
+        <h2 class="text-xl font-semibold text-white"><a href="index.html"> HOME </a></h2>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<body class="bg-gradient-to-r from-yellow-100 via-pink-100 to-blue-100 pt-20">
+
+  <div class=" container mx-auto p-4 pt-6">
+
+    <!-- City Selection -->
+    <section>
+      <h2 class="text-2xl font-bold mb-2 text-center pt-8 pb-8 ">Select City ↓</h2>
+      <select id="city-select" class="border rounded-full px-10 py-2 mx-auto block">
+        <option value="">All Cities</option>
+        <option value="Visakhapatnam">Visakhapatnam</option>
+        <option value="Vizianagaram">Vizianagaram</option>
+        <option value="Bengaluru">Bengaluru</option>
+        <option value="Hyderabad">Hyderabad</option>
+      </select>
+    </section>
+
+    <!-- Restaurant Listing -->
+    <section>
+      <h2 class="text-2xl font-bold mb-2 pt-8">Available Restaurants 🥗</h2>
+      <ul id="restaurants-container" class="grid grid-cols-1 gap-4">
+        <!-- Restaurants will be dynamically added here -->
+      </ul>
+    </section>
+
+    <!-- Reservation Booking -->
+    <section id="reservation-booking" class="mt-8 hidden">
+      <h2 class="text-2xl font-bold mb-2">Reservation Booking</h2>
+      <form id="reservation-form">
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label for="restaurant">Restaurant</label>
+            <select id="restaurant" class="border rounded px-2 py-1">
+              <option value="">Select a restaurant</option>
+              <!-- Populate the select options dynamically with restaurant data -->
+            </select>
+          </div>
+          <div>
+            <label for="date">Date</label>
+            <input type="date" id="date" class="border rounded px-2 py-1">
+          </div>
+          <div>
+            <label for="time">Time</label>
+            <input type="time" id="time" class="border rounded px-2 py-1">
+          </div>
+          <div>
+            <label for="party-size">Party Size</label>
+            <input type="number" id="party-size" class="border rounded px-2 py-1">
+          </div>
+        </div>
+        <button type="submit" class="mt-4 bg-green-500 text-white rounded px-4 py-2">Book Now</button>
+      </form>
+    </section>
+
+    <!-- Booking Confirmation -->
+    <section id="confirmation" class="mt-8 hidden">
+      <h2 class="text-2xl font-bold mb-2">Booking Confirmation</h2>
+      <div class="bg-green-200 rounded p-4">
+        <p class="font-semibold">Thank you! Your reservation has been confirmed.</p>
+        <p id="reservation-details"></p>
+      </div>
+    </section>
+  </div>
+
+  <script src="script2.js"> </script>
+</body>
+
+</html>
+
+
